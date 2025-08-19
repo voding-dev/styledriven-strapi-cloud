@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepage_recent_works",
+  "info": {
+    "singularName": "homepage-recent-work",
+    "pluralName": "homepage-recent-works",
+    "displayName": "HomepageRecentWork"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "position": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 1,
+      "max": 6
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectName": {
+      "type": "text",
+      "required": true
+    },
+    "category": {
+      "type": "text",
+      "required": true
+    },
+    "client": {
+      "type": "text",
+      "required": true
+    },
+    "year": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "tags": {
+      "type": "json"
+    }
+  }
+}

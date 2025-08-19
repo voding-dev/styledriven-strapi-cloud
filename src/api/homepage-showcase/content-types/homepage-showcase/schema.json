@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepage_showcases",
+  "info": {
+    "singularName": "homepage-showcase",
+    "pluralName": "homepage-showcases",
+    "displayName": "HomepageShowcase"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "position": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 1,
+      "max": 3
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectName": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "category": {
+      "type": "text",
+      "required": true
+    },
+    "client": {
+      "type": "text",
+      "required": true
+    },
+    "year": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "tags": {
+      "type": "json"
+    }
+  }
+}
