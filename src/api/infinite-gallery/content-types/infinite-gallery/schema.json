@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "infinite_galleries",
+  "info": {
+    "singularName": "infinite-gallery",
+    "pluralName": "infinite-galleries",
+    "displayName": "InfiniteGallery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Portrait",
+        "Lifestyle",
+        "Product Photography",
+        "Fashion",
+        "Events & Weddings",
+        "Architecture & Real Estate",
+        "Travel",
+        "Food & Beverage",
+        "Editorial",
+        "Commercial",
+        "Branding & Identity",
+        "UI/UX Design",
+        "Web Design",
+        "Mobile App Design",
+        "Graphic Design",
+        "Motion Graphics",
+        "Print Design",
+        "Illustration",
+        "Packaging Design",
+        "Social Media Design",
+        "Website Development",
+        "E-commerce Development",
+        "Web Apps",
+        "Mobile App Development",
+        "Frontend Development",
+        "Backend Development",
+        "API Integrations",
+        "CMS Development",
+        "Custom Software",
+        "Performance Optimization"
+      ]
+    },
+    "year": {
+      "type": "text",
+      "required": true
+    },
+    "vimeoVideoUrl": {
+      "type": "text",
+      "regex": "^(https?:\\/\\/)?(www\\.)?(vimeo\\.com\\/)([0-9]+)(\\/)?$"
+    },
+    "vimeoVideoTitle": {
+      "type": "text"
+    }
+  }
+}

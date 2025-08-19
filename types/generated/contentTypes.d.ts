@@ -538,6 +538,76 @@ export interface ApiHomepageShowcaseHomepageShowcase
   };
 }
 
+export interface ApiInfiniteGalleryInfiniteGallery
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'infinite_galleries';
+  info: {
+    displayName: 'InfiniteGallery';
+    pluralName: 'infinite-galleries';
+    singularName: 'infinite-gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<
+      [
+        'Portrait',
+        'Lifestyle',
+        'Product Photography',
+        'Fashion',
+        'Events & Weddings',
+        'Architecture & Real Estate',
+        'Travel',
+        'Food & Beverage',
+        'Editorial',
+        'Commercial',
+        'Branding & Identity',
+        'UI/UX Design',
+        'Web Design',
+        'Mobile App Design',
+        'Graphic Design',
+        'Motion Graphics',
+        'Print Design',
+        'Illustration',
+        'Packaging Design',
+        'Social Media Design',
+        'Website Development',
+        'E-commerce Development',
+        'Web Apps',
+        'Mobile App Development',
+        'Frontend Development',
+        'Backend Development',
+        'API Integrations',
+        'CMS Development',
+        'Custom Software',
+        'Performance Optimization',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::infinite-gallery.infinite-gallery'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    thumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vimeoVideoTitle: Schema.Attribute.Text;
+    vimeoVideoUrl: Schema.Attribute.Text;
+    year: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1051,6 +1121,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::homepage-recent-work.homepage-recent-work': ApiHomepageRecentWorkHomepageRecentWork;
       'api::homepage-showcase.homepage-showcase': ApiHomepageShowcaseHomepageShowcase;
+      'api::infinite-gallery.infinite-gallery': ApiInfiniteGalleryInfiniteGallery;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
