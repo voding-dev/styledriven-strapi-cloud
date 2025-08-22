@@ -620,6 +620,44 @@ export interface ApiPortfolioFeaturedWorkPortfolioFeaturedWork
     draftAndPublish: true;
   };
   attributes: {
+    behindTheScenes: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    category: Schema.Attribute.Enumeration<
+      [
+        'Portrait',
+        'Lifestyle',
+        'Product Photography',
+        'Fashion',
+        'Events & Weddings',
+        'Architecture & Real Estate',
+        'Travel',
+        'Food & Beverage',
+        'Editorial',
+        'Commercial',
+        'Branding & Identity',
+        'UI/UX Design',
+        'Web Design',
+        'Mobile App Design',
+        'Graphic Design',
+        'Motion Graphics',
+        'Print Design',
+        'Illustration',
+        'Packaging Design',
+        'Social Media Design',
+        'Website Development',
+        'E-commerce Development',
+        'Web Apps',
+        'Mobile App Development',
+        'Frontend Development',
+        'Backend Development',
+        'API Integrations',
+        'CMS Development',
+        'Custom Software',
+        'Performance Optimization',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -648,11 +686,16 @@ export interface ApiPortfolioFeaturedWorkPortfolioFeaturedWork
         },
         number
       >;
+    projectClient: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectContext: Schema.Attribute.Text & Schema.Attribute.Required;
     projectDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectLessons: Schema.Attribute.Text & Schema.Attribute.Required;
     projectLogo: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
     projectName: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectOutcome: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectProcess: Schema.Attribute.String & Schema.Attribute.Required;
     projectScope: Schema.Attribute.Blocks & Schema.Attribute.Required;
     projectYear: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
@@ -663,6 +706,7 @@ export interface ApiPortfolioFeaturedWorkPortfolioFeaturedWork
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    vimeoLinkJSON: Schema.Attribute.JSON;
   };
 }
 

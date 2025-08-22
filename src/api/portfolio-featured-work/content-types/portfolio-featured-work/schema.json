@@ -62,6 +62,10 @@
       "type": "text",
       "required": true
     },
+    "projectClient": {
+      "type": "text",
+      "required": true
+    },
     "projectScope": {
       "type": "blocks",
       "required": true
@@ -76,6 +80,70 @@
         "videos",
         "audios"
       ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Portrait",
+        "Lifestyle",
+        "Product Photography",
+        "Fashion",
+        "Events & Weddings",
+        "Architecture & Real Estate",
+        "Travel",
+        "Food & Beverage",
+        "Editorial",
+        "Commercial",
+        "Branding & Identity",
+        "UI/UX Design",
+        "Web Design",
+        "Mobile App Design",
+        "Graphic Design",
+        "Motion Graphics",
+        "Print Design",
+        "Illustration",
+        "Packaging Design",
+        "Social Media Design",
+        "Website Development",
+        "E-commerce Development",
+        "Web Apps",
+        "Mobile App Development",
+        "Frontend Development",
+        "Backend Development",
+        "API Integrations",
+        "CMS Development",
+        "Custom Software",
+        "Performance Optimization"
+      ]
+    },
+    "projectContext": {
+      "type": "text",
+      "required": true
+    },
+    "projectProcess": {
+      "type": "string",
+      "required": true
+    },
+    "projectOutcome": {
+      "type": "text",
+      "required": true
+    },
+    "projectLessons": {
+      "type": "text",
+      "required": true
+    },
+    "behindTheScenes": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "vimeoLinkJSON": {
+      "type": "json"
     }
   }
 }
