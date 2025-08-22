@@ -588,6 +588,16 @@ export interface ApiInfiniteGalleryInfiniteGallery
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    gridSize: Schema.Attribute.Enumeration<
+      [
+        'one `1x1` (Standard)',
+        'two `2x1` (Wide)',
+        'three `1x2` (Tall)',
+        'four` 2x2` (Large)',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'one `1x1` (Standard)'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

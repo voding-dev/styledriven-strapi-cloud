@@ -68,6 +68,17 @@
     },
     "vimeoVideoTitle": {
       "type": "text"
+    },
+    "gridSize": {
+      "type": "enumeration",
+      "required": true,
+      "default": "one `1x1` (Standard)",
+      "enum": [
+        "one `1x1` (Standard)",
+        "two `2x1` (Wide)",
+        "three `1x2` (Tall)",
+        "four` 2x2` (Large)"
+      ]
     }
   }
 }
