@@ -121,7 +121,7 @@
       "required": true
     },
     "projectProcess": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "projectOutcome": {

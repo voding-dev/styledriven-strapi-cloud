@@ -695,7 +695,7 @@ export interface ApiPortfolioFeaturedWorkPortfolioFeaturedWork
     >;
     projectName: Schema.Attribute.Text & Schema.Attribute.Required;
     projectOutcome: Schema.Attribute.Text & Schema.Attribute.Required;
-    projectProcess: Schema.Attribute.String & Schema.Attribute.Required;
+    projectProcess: Schema.Attribute.Text & Schema.Attribute.Required;
     projectScope: Schema.Attribute.Blocks & Schema.Attribute.Required;
     projectYear: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
