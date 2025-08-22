@@ -608,6 +608,64 @@ export interface ApiInfiniteGalleryInfiniteGallery
   };
 }
 
+export interface ApiPortfolioFeaturedWorkPortfolioFeaturedWork
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'portfolio_featured_works';
+  info: {
+    displayName: 'PortfolioFeaturedWork';
+    pluralName: 'portfolio-featured-works';
+    singularName: 'portfolio-featured-work';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-featured-work.portfolio-featured-work'
+    > &
+      Schema.Attribute.Private;
+    mainGallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Schema.Attribute.Required;
+    position: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+          min: 1;
+        },
+        number
+      >;
+    projectDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    projectName: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectScope: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    projectYear: Schema.Attribute.Text & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    thumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1122,6 +1180,7 @@ declare module '@strapi/strapi' {
       'api::homepage-recent-work.homepage-recent-work': ApiHomepageRecentWorkHomepageRecentWork;
       'api::homepage-showcase.homepage-showcase': ApiHomepageShowcaseHomepageShowcase;
       'api::infinite-gallery.infinite-gallery': ApiInfiniteGalleryInfiniteGallery;
+      'api::portfolio-featured-work.portfolio-featured-work': ApiPortfolioFeaturedWorkPortfolioFeaturedWork;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

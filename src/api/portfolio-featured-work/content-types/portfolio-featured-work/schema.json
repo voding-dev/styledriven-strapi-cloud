@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio_featured_works",
+  "info": {
+    "singularName": "portfolio-featured-work",
+    "pluralName": "portfolio-featured-works",
+    "displayName": "PortfolioFeaturedWork"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "position": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 1,
+      "max": 6
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectName": {
+      "type": "text",
+      "required": true
+    },
+    "projectYear": {
+      "type": "text",
+      "required": true
+    },
+    "projectDescription": {
+      "type": "text",
+      "required": true
+    },
+    "projectScope": {
+      "type": "blocks",
+      "required": true
+    },
+    "mainGallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
