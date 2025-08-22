@@ -608,6 +608,192 @@ export interface ApiInfiniteGalleryInfiniteGallery
   };
 }
 
+export interface ApiOfferRetainerWorkOfferRetainerWork
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'offer_retainer_works';
+  info: {
+    displayName: 'OfferRetainerWork';
+    pluralName: 'offer-retainer-works';
+    singularName: 'offer-retainer-work';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    behindTheScenes: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    category: Schema.Attribute.Enumeration<
+      [
+        'Portrait',
+        'Lifestyle',
+        'Product Photography',
+        'Fashion',
+        'Events & Weddings',
+        'Architecture & Real Estate',
+        'Travel',
+        'Food & Beverage',
+        'Editorial',
+        'Commercial',
+        'Branding & Identity',
+        'UI/UX Design',
+        'Web Design',
+        'Mobile App Design',
+        'Graphic Design',
+        'Motion Graphics',
+        'Print Design',
+        'Illustration',
+        'Packaging Design',
+        'Social Media Design',
+        'Website Development',
+        'E-commerce Development',
+        'Web Apps',
+        'Mobile App Development',
+        'Frontend Development',
+        'Backend Development',
+        'API Integrations',
+        'CMS Development',
+        'Custom Software',
+        'Performance Optimization',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::offer-retainer-work.offer-retainer-work'
+    > &
+      Schema.Attribute.Private;
+    mainGallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Schema.Attribute.Required;
+    position: Schema.Attribute.Integer & Schema.Attribute.Required;
+    projectClient: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectContext: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectLessons: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    projectName: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectOutcome: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectProcess: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectScope: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    projectYear: Schema.Attribute.Text & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    thumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vimeoLinkJSON: Schema.Attribute.JSON;
+  };
+}
+
+export interface ApiPortfolioAllProjectPortfolioAllProject
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'portfolio_all_projects';
+  info: {
+    displayName: 'PortfolioAllProject';
+    pluralName: 'portfolio-all-projects';
+    singularName: 'portfolio-all-project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    behindTheScenes: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    category: Schema.Attribute.Enumeration<
+      [
+        'Portrait',
+        'Lifestyle',
+        'Product Photography',
+        'Fashion',
+        'Events & Weddings',
+        'Architecture & Real Estate',
+        'Travel',
+        'Food & Beverage',
+        'Editorial',
+        'Commercial',
+        'Branding & Identity',
+        'UI/UX Design',
+        'Web Design',
+        'Mobile App Design',
+        'Graphic Design',
+        'Motion Graphics',
+        'Print Design',
+        'Illustration',
+        'Packaging Design',
+        'Social Media Design',
+        'Website Development',
+        'E-commerce Development',
+        'Web Apps',
+        'Mobile App Development',
+        'Frontend Development',
+        'Backend Development',
+        'API Integrations',
+        'CMS Development',
+        'Custom Software',
+        'Performance Optimization',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::portfolio-all-project.portfolio-all-project'
+    > &
+      Schema.Attribute.Private;
+    mainGallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    > &
+      Schema.Attribute.Required;
+    position: Schema.Attribute.Integer & Schema.Attribute.Required;
+    projectClient: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectContext: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectLessons: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectLogo: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    projectName: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectOutcome: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectProcess: Schema.Attribute.Text & Schema.Attribute.Required;
+    projectScope: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    projectYear: Schema.Attribute.Text & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    thumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vimeoLinkJSON: Schema.Attribute.JSON;
+  };
+}
+
 export interface ApiPortfolioFeaturedWorkPortfolioFeaturedWork
   extends Struct.CollectionTypeSchema {
   collectionName: 'portfolio_featured_works';
@@ -1224,6 +1410,8 @@ declare module '@strapi/strapi' {
       'api::homepage-recent-work.homepage-recent-work': ApiHomepageRecentWorkHomepageRecentWork;
       'api::homepage-showcase.homepage-showcase': ApiHomepageShowcaseHomepageShowcase;
       'api::infinite-gallery.infinite-gallery': ApiInfiniteGalleryInfiniteGallery;
+      'api::offer-retainer-work.offer-retainer-work': ApiOfferRetainerWorkOfferRetainerWork;
+      'api::portfolio-all-project.portfolio-all-project': ApiPortfolioAllProjectPortfolioAllProject;
       'api::portfolio-featured-work.portfolio-featured-work': ApiPortfolioFeaturedWorkPortfolioFeaturedWork;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

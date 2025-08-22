@@ -1,0 +1,147 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offer_retainer_works",
+  "info": {
+    "singularName": "offer-retainer-work",
+    "pluralName": "offer-retainer-works",
+    "displayName": "OfferRetainerWork"
+  },
+ "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "position": {
+      "type": "integer",
+      "required": true,
+      "unique": false
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "projectName": {
+      "type": "text",
+      "required": true
+    },
+    "projectYear": {
+      "type": "text",
+      "required": true
+    },
+    "projectDescription": {
+      "type": "text",
+      "required": true
+    },
+    "projectClient": {
+      "type": "text",
+      "required": true
+    },
+    "projectScope": {
+      "type": "blocks",
+      "required": true
+    },
+    "mainGallery": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Portrait",
+        "Lifestyle",
+        "Product Photography",
+        "Fashion",
+        "Events & Weddings",
+        "Architecture & Real Estate",
+        "Travel",
+        "Food & Beverage",
+        "Editorial",
+        "Commercial",
+        "Branding & Identity",
+        "UI/UX Design",
+        "Web Design",
+        "Mobile App Design",
+        "Graphic Design",
+        "Motion Graphics",
+        "Print Design",
+        "Illustration",
+        "Packaging Design",
+        "Social Media Design",
+        "Website Development",
+        "E-commerce Development",
+        "Web Apps",
+        "Mobile App Development",
+        "Frontend Development",
+        "Backend Development",
+        "API Integrations",
+        "CMS Development",
+        "Custom Software",
+        "Performance Optimization"
+      ]
+    },
+    "projectContext": {
+      "type": "text",
+      "required": true
+    },
+    "projectProcess": {
+      "type": "text",
+      "required": true
+    },
+    "projectOutcome": {
+      "type": "text",
+      "required": true
+    },
+    "projectLessons": {
+      "type": "text",
+      "required": true
+    },
+    "behindTheScenes": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "vimeoLinkJSON": {
+      "type": "json"
+    }
+  }
+}
